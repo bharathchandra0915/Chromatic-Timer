@@ -24,8 +24,25 @@ def play_congratulate_sound():
     pygame.mixer.music.play()
 
 
-def fill_timer():
-    pass
+
+def fill_timer(color_mode, prev_angle):
+    color = ()
+    if color_mode == 0:
+        prev_angle = prev_angle
+    if color_mode == 1:
+        prev_angle = -90
+
+    if count < timer / 2:
+        red_value = np.interp(float(count + 1), [0, timer / 2], [16, 227])
+        red_value = int(red_value)
+        color = (0, 227, red_value)
+
+    else:
+        green_value = np.interp(float(count + 1), [timer / 2, timer], [227, 16])
+        green_value = int(green_value)
+        color = (0, green_value, 227)
+    cv.ellipse(img,(239,321),(radius,radius),0,prev_angle,end_angle,color,-1)
+
 
 timer = int(input('Set the timer (in seconds) '))
 cv.namedWindow("Timer",cv.WINDOW_AUTOSIZE)
@@ -33,7 +50,7 @@ timer_img = cv.imread("images/timer3.png")
 timer_img = cv.resize(timer_img,(480,480))
 # timer = 15
 img = np.ones((640,480,3),np.uint8)*255
-timer_pos_center = 41  ### y cordinate of the center
+timer_pos_center = 41
 img[timer_pos_center:timer_pos_center+480,0:480] = timer_img
 count = 0
 radius = 135
@@ -43,7 +60,10 @@ intro_img = cv.resize(intro_img,(480,480))
 cv.imshow("Timer",intro_img)
 cv.waitKey(1000)
 
+
 prev_angle = -90
+center = (291, 321)
+color_mode = 0 ## change it to 1 if you wish to see another color gradient pattern
 while count < timer:
     if count < timer - 6:
         play_tick_sound()
@@ -58,10 +78,7 @@ while count < timer:
     angle = np.interp(float(count+1),[0,timer],[0,360])
     angle = int(angle)
     end_angle = -90 + angle
-
-    cv.ellipse(img,(239,321),(radius,radius),0,prev_angle,end_angle,(252,244,3),-1)
-
-    # print(count, angle)
+    fill_timer(color_mode, prev_angle)
 
     count +=1
     prev_angle = end_angle
