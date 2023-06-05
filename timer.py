@@ -29,7 +29,7 @@ def fill_timer():
 
 timer = int(input('Set the timer (in seconds) '))
 cv.namedWindow("Timer",cv.WINDOW_AUTOSIZE)
-timer_img = cv.imread("timer_images/timer3.png")
+timer_img = cv.imread("images/timer3.png")
 timer_img = cv.resize(timer_img,(480,480))
 # timer = 15
 img = np.ones((640,480,3),np.uint8)*255
@@ -38,7 +38,7 @@ img[timer_pos_center:timer_pos_center+480,0:480] = timer_img
 count = 0
 radius = 135
 
-intro_img = cv.imread("ai_generated/provide a analo 1.png")
+intro_img = cv.imread("images/start.png")
 intro_img = cv.resize(intro_img,(480,480))
 cv.imshow("Timer",intro_img)
 cv.waitKey(1000)
@@ -61,7 +61,7 @@ while count < timer:
 
     cv.ellipse(img,(239,321),(radius,radius),0,prev_angle,end_angle,(252,244,3),-1)
 
-    print(count, angle)
+    # print(count, angle)
 
     count +=1
     prev_angle = end_angle
