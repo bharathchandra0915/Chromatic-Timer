@@ -13,15 +13,14 @@ Chromatic Timer is a visually dynamic timer app developed that recreates the nos
 
 ## Screenshots
 
-    
-![Welcome_image](https://github.com/bharathchandra0915/Chromatic-Timer/assets/78205932/08b581ea-ff98-4f4a-804e-365c0c05f815) 
-    
-<img src="https://github.com/bharathchandra0915/Chromatic-Timer/assets/78205932/6630dab6-d02a-4c4f-9df7-22e6ab09a36c" alt="demo_screenshot1" width="480">
+<img width = 320 src ="https://github.com/bharathchandra0915/Chromatic-Timer/assets/78205932/08b581ea-ff98-4f4a-804e-365c0c05f815" alt="Welcome_image" >
 
 <br>
 <br>
 
-![Time_up](https://github.com/bharathchandra0915/Chromatic-Timer/assets/78205932/a8a4e930-ebbc-470c-8f87-a61a20c3649b)
+<img width = 320 src="https://github.com/bharathchandra0915/Chromatic-Timer/assets/78205932/6630dab6-d02a-4c4f-9df7-22e6ab09a36c" alt="Demo_screenshot1">
+<img width = 320 src="https://github.com/bharathchandra0915/Chromatic-Timer/assets/78205932/a8a4e930-ebbc-470c-8f87-a61a20c3649b" alt="Timeup_image">
+
 
 ## Usage
 
